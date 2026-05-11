@@ -429,7 +429,7 @@ body {
    FLOATING ELEMENTS
    ═══════════════════════════════════════════ */
 
-.floating {
+.floating, .animate-float {
   animation: float 6s ease-in-out infinite;
 }
 
@@ -438,7 +438,7 @@ body {
   50% { transform: translateY(-10px); }
 }
 
-.floating-delay-2 {
+.floating-delay-2, .animate-float-delay-2 {
   animation-delay: 2s;
 }
 
