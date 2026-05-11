@@ -18,11 +18,11 @@ const galleryImages = [
 
 export default function GalleryPage() {
   return (
-    <div className="pt-24 pb-16">
+    <div className="pt-24 pb-16 min-h-screen">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center mb-12 animate-fade-up">
-          <span className="text-sm font-semibold tracking-wider text-primary uppercase">
+        <div className="text-center mb-12">
+          <span className="text-sm font-semibold tracking-wider text-primary uppercase block">
             Portofolio
           </span>
           <h1 className="section-title mt-2">Galeri Karya</h1>
@@ -32,18 +32,19 @@ export default function GalleryPage() {
         </div>
 
         {/* Gallery Grid */}
-        <div className="gallery-grid">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {galleryImages.map((img, i) => (
             <div
               key={i}
-              className={`gallery-item animate-fade-up ${i === 0 ? 'featured' : ''}`}
-              style={{ animationDelay: `${i * 0.05}s` }}
+              className={`relative rounded-2xl overflow-hidden bg-gray-100 ${
+                i === 0 ? 'col-span-2 row-span-2 aspect-square' : 'aspect-square'
+              }`}
             >
               <Image
                 src={img.src}
                 alt={img.alt}
                 fill
-                className="object-cover transition-transform duration-500 hover:scale-110"
+                className="object-cover hover:scale-105 transition-transform duration-500"
                 sizes={i === 0 ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 50vw, 25vw"}
               />
             </div>
@@ -51,7 +52,7 @@ export default function GalleryPage() {
         </div>
 
         {/* Social CTA */}
-        <div className="text-center mt-12 animate-fade-up">
+        <div className="text-center mt-12">
           <p className="text-secondary mb-4">
             Follow Instagram kami untuk melihat lebih banyak karya!
           </p>
