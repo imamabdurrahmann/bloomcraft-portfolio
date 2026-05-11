@@ -47,13 +47,12 @@ export default function HomePage() {
             </div>
 
             <div className="relative animate-fade-in" style={{ animationDelay: "0.3s" }}>
-              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl bg-white p-4">
+              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-rose-pastel/20 to-mint-pastel/20 aspect-square max-w-md mx-auto">
                 <Image
-                  src="/images/logo.png"
+                  src="/images/ellys-logo-nobg.png"
                   alt="Elly's Florist Logo"
-                  width={600}
-                  height={600}
-                  className="w-full h-auto object-contain"
+                  fill
+                  className="object-contain"
                   priority
                 />
               </div>
