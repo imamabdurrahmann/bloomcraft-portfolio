@@ -20,6 +20,18 @@ const galleryImages = [
   { src: "/images/kustom2.png", alt: "Custom Bouquet 2" },
   { src: "/images/money1.png", alt: "Money Bouquet 2" },
   { src: "/images/papan2.png", alt: "Papan Bunga 2" },
+  { src: "/images/Screenshot_20260511_160748_Instagram.png", alt: "Instagram Post 1" },
+  { src: "/images/Screenshot_20260511_191949_Instagram.png", alt: "Instagram Post 2" },
+  { src: "/images/Screenshot_20260511_192007_Instagram.png", alt: "Instagram Post 3" },
+  { src: "/images/Screenshot_20260511_192114_Instagram.png", alt: "Instagram Post 4" },
+  { src: "/images/Screenshot_20260511_192129_Instagram.png", alt: "Instagram Post 5" },
+  { src: "/images/Screenshot_20260511_192145_Instagram.png", alt: "Instagram Post 6" },
+  { src: "/images/Screenshot_20260511_192218_Instagram.png", alt: "Instagram Post 7" },
+  { src: "/images/Screenshot_20260511_192232_Instagram.png", alt: "Instagram Post 8" },
+  { src: "/images/Screenshot_20260511_192303_Instagram.png", alt: "Instagram Post 9" },
+  { src: "/images/Screenshot_20260511_192321_Instagram.png", alt: "Instagram Post 10" },
+  { src: "/images/Screenshot_20260511_192349_Instagram.png", alt: "Instagram Post 11" },
+  { src: "/images/Screenshot_20260511_192427_Instagram.png", alt: "Instagram Post 12" },
 ];
 
 export default function GalleryPage() {
