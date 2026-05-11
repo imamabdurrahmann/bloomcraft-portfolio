@@ -38,11 +38,11 @@ export default function GalleryPage() {
         </div>
 
         {/* Gallery Grid - Fixed to remove black bars */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-0 sm:gap-1">
           {galleryImages.map((img, i) => (
             <div
               key={i}
-              className={`relative overflow-hidden rounded-xl ${
+              className={`relative overflow-hidden bg-gradient-to-br from-rose-pastel/20 to-mint-pastel/20 ${
                 i === 0 ? "col-span-2 row-span-2 aspect-square" : "aspect-square"
               }`}
             >
