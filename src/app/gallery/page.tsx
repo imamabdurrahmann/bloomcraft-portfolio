@@ -19,7 +19,6 @@ const galleryImages = [
   { src: "/images/kustom2.png", alt: "Custom Bouquet 2" },
   { src: "/images/money1.png", alt: "Money Bouquet 2" },
   { src: "/images/papan2.png", alt: "Papan Bunga 2" },
-  { src: "/images/Screenshot_20260511_160748_Instagram.png", alt: "Instagram Post 1" },
   { src: "/images/Screenshot_20260511_191949_Instagram.png", alt: "Instagram Post 2" },
   { src: "/images/Screenshot_20260511_192007_Instagram.png", alt: "Instagram Post 3" },
   { src: "/images/Screenshot_20260511_192114_Instagram.png", alt: "Instagram Post 4" },
