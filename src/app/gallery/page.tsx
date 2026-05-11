@@ -6,12 +6,22 @@ import { Instagram, MessageCircle } from "lucide-react";
 const WHATSAPP_NUMBER = "6285173003181";
 
 const galleryImages = [
-  { src: "/images/bouquet-1.jpg", alt: "Bouquet 1" },
-  { src: "/images/bouquet-2.jpg", alt: "Bouquet 2" },
-  { src: "/images/bouquet-3.jpg", alt: "Bouquet 3" },
-  { src: "/images/bouquet-4.jpg", alt: "Bouquet 4" },
-  { src: "/images/bouquet-5.jpg", alt: "Bouquet 5" },
-  { src: "/images/bouquet-6.jpg", alt: "Bouquet 6" },
+  // Featured image (larger)
+  { src: "/images/graduation.png", alt: "Bouquet Graduation" },
+  // Grid images
+  { src: "/images/Money2.png", alt: "Money Bouquet" },
+  { src: "/images/bungakustom.png", alt: "Bouquet Custom" },
+  { src: "/images/papanbunga.png", alt: "Papan Bunga" },
+  { src: "/images/Wedding1.png", alt: "Wedding Bouquet" },
+  { src: "/images/bouquet-1.jpg", alt: "Hand Bouquet" },
+  { src: "/images/bouquet-2.jpg", alt: "Bouquet Collection" },
+  { src: "/images/bouquet-3.jpg", alt: "Bouquet Floral" },
+  { src: "/images/bouquet-4.jpg", alt: "Bouquet Pink" },
+  { src: "/images/bouquet-5.jpg", alt: "Bouquet Gold" },
+  { src: "/images/bouquet-6.jpg", alt: "Bouquet Elegant" },
+  { src: "/images/kustom2.png", alt: "Custom Bouquet 2" },
+  { src: "/images/money1.png", alt: "Money Bouquet 2" },
+  { src: "/images/papan2.png", alt: "Papan Bunga 2" },
 ];
 
 export default function GalleryPage() {
@@ -29,22 +39,22 @@ export default function GalleryPage() {
           </p>
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {/* Gallery Grid - Bento Style */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {galleryImages.map((img, i) => (
             <div
               key={i}
               className={`relative overflow-hidden rounded-2xl bg-gray-100 ${
-                i === 0 ? "col-span-2 row-span-2 aspect-square" : "aspect-square"
+                i === 0 ? "col-span-2 row-span-2" : ""
               }`}
-              style={{ position: "relative" }}
+              style={{ aspectRatio: i === 0 ? "1" : "1" }}
             >
               <Image
                 src={img.src}
                 alt={img.alt}
                 fill
-                className="object-cover hover:scale-105 transition-transform duration-500"
-                sizes={i === 0 ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 50vw, 33vw"}
+                className="object-cover hover:scale-110 transition-transform duration-500"
+                sizes={i === 0 ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 50vw, 25vw"}
               />
             </div>
           ))}

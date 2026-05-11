@@ -69,20 +69,19 @@ export default function ContactPage() {
             </a>
 
             <a
-              href="/catalog"
+              href="https://lynk.id/ellys"
+              target="_blank"
+              rel="noopener noreferrer"
               className="glass-card flex items-center gap-4 p-4 hover:border-[var(--primary)] transition-all"
             >
               <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-blue-600">
-                  <rect x="3" y="3" width="7" height="7" rx="1"/>
-                  <rect x="14" y="3" width="7" height="7" rx="1"/>
-                  <rect x="14" y="14" width="7" height="7" rx="1"/>
-                  <rect x="3" y="14" width="7" height="7" rx="1"/>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="text-blue-600">
+                  <path d="M19.46 9H4.54a.54.54 0 0 0-.54.54v9.08a2.16 2.16 0 0 0 2.16 2.16h12.7a2.16 2.16 0 0 0 2.16-2.16V9.54a.54.54 0 0 0-.54-.54m-4.6 12.28h-7.46a.6.6 0 0 1-.6-.6v-4.24a.6.6 0 0 1 .6-.6h7.46a.6.6 0 0 1 .6.6v4.24a.6.6 0 0 1-.6.6m-7.46-11.42a3.36 3.36 0 1 0 0-6.72 3.36 3.36 0 0 0 0 6.72m6.72 0a3.36 3.36 0 1 0 0-6.72 3.36 3.36 0 0 0 0 6.72"/>
                 </svg>
               </div>
               <div>
                 <p className="font-semibold">Katalog Lengkap</p>
-                <p className="text-sm text-secondary">Lihat semua produk kami</p>
+                <p className="text-sm text-secondary">lynk.id/ellys</p>
               </div>
             </a>
 
