@@ -12,7 +12,6 @@ const galleryImages = [
   { src: "/images/papanbunga.png", alt: "Papan Bunga" },
   { src: "/images/Wedding1.png", alt: "Wedding Bouquet" },
   { src: "/images/bouquet-1.jpg", alt: "Hand Bouquet" },
-  { src: "/images/bouquet-2.jpg", alt: "Bouquet Collection" },
   { src: "/images/bouquet-3.jpg", alt: "Bouquet Floral" },
   { src: "/images/bouquet-4.jpg", alt: "Bouquet Pink" },
   { src: "/images/bouquet-5.jpg", alt: "Bouquet Gold" },
