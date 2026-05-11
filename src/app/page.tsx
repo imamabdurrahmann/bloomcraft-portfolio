@@ -17,7 +17,7 @@ import {
   Truck,
 } from "lucide-react";
 
-const WHATSAPP_NUMBER = "6281234567890";
+const WHATSAPP_NUMBER = "6285173003181";
 
 function WhatsAppFloat() {
   return (
@@ -113,7 +113,7 @@ function Hero() {
           <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} className="hero-content">
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-border mb-6">
               <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              <span className="text-sm font-medium text-secondary">Local Business • Lebong, Bengkulu</span>
+              <span className="text-sm font-medium text-secondary">Toko: Kota Bengkulu, Bengkulu</span>
             </motion.div>
 
             <h1 className="section-title mb-4">
@@ -327,8 +327,8 @@ function Gallery() {
         </div>
 
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mt-8">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
-            Lihat Semua di Instagram <ChevronRight size={18} />
+          <a href="https://instagram.com/ellys.flo" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+            @ellys.flo <ChevronRight size={18} />
           </a>
         </motion.div>
       </div>
@@ -439,10 +439,18 @@ function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-white mb-4">Info Pengiriman</h4>
+            <h4 className="font-semibold text-white mb-4">Info Toko & Kontak</h4>
             <div className="space-y-3 text-sm text-white/70">
-              <div className="flex items-start gap-2"><MapPin size={16} className="mt-0.5 text-rose-pastel" /><span>Kabupaten Lebong & Provinsi Bengkulu</span></div>
-              <div className="flex items-start gap-2"><Clock size={16} className="mt-0.5 text-rose-pastel" /><span>Senin-Sabtu: 08.00 - 20.00 WIB<br />Minggu: 09.00 - 17.00 WIB</span></div>
+              <div className="flex items-start gap-2"><MapPin size={16} className="mt-0.5 text-rose-pastel" /><span><strong>Store 1:</strong> Unib Belakang, Depan Lapas Perempuan (08.00 - 21.00)<br /><strong>Store 2:</strong> Poltekes Jl. Seruni, Depan Indomaret (08.00 - 17.00)</span></div>
+              <div className="flex items-start gap-2"><Clock size={16} className="mt-0.5 text-rose-pastel" /><span>Kota Bengkulu, Provinsi Bengkulu</span></div>
+              <div className="flex items-start gap-2">
+                <Instagram size={16} className="mt-0.5 text-rose-pastel" />
+                <a href="https://instagram.com/ellys.flo" target="_blank" rel="noopener noreferrer" className="hover:text-white">@ellys.flo</a>
+              </div>
+              <div className="flex items-start gap-2">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="mt-0.5 text-rose-pastel"><path d="M19.46 9H4.54a.54.54 0 0 0-.54.54v9.08a2.16 2.16 0 0 0 2.16 2.16h12.7a2.16 2.16 0 0 0 2.16-2.16V9.54a.54.54 0 0 0-.54-.54m-4.6 12.28h-7.46a.6.6 0 0 1-.6-.6v-4.24a.6.6 0 0 1 .6-.6h7.46a.6.6 0 0 1 .6.6v4.24a.6.6 0 0 1-.6.6m-7.46-11.42a3.36 3.36 0 1 0 0-6.72 3.36 3.36 0 0 0 0 6.72m6.72 0a3.36 3.36 0 1 0 0-6.72 3.36 3.36 0 0 0 0 6.72"/></svg>
+                <a href="https://lynk.id/ellys" target="_blank" rel="noopener noreferrer" className="hover:text-white">lynk.id/ellys</a>
+              </div>
             </div>
           </div>
         </div>
