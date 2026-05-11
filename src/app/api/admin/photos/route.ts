@@ -37,7 +37,7 @@ export async function GET() {
       .filter((f: any) => f.type === "file" && /\.(jpg|jpeg|png|gif|webp)$/i.test(f.name))
       .map((f: any) => ({
         name: f.name,
-        path: `/${IMAGES_PATH}/${f.name}`,
+        path: `/images/${f.name}`,
         sha: f.sha,
       }));
 
