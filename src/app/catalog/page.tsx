@@ -3,8 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MessageCircle } from "lucide-react";
-
-const WHATSAPP_NUMBER = "6285173003181";
+import { WHATSAPP_NUMBER } from "@/config";
 
 const categories = [
   {

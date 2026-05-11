@@ -3,8 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { MessageCircle, ArrowRight, Sparkles, Flower2, Gift, Heart } from "lucide-react";
-
-const WHATSAPP_NUMBER = "6285173003181";
+import { WHATSAPP_NUMBER } from "@/config";
 
 const features = [
   { icon: <Sparkles className="w-8 h-8" />, title: "Premium Quality", desc: "Bahan berkualitas tinggi" },

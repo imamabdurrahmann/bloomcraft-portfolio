@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 import { MessageCircle, Mail, User, Send, MapPin, Clock, Instagram } from "lucide-react";
-
-const WHATSAPP_NUMBER = "6285173003181";
+import { WHATSAPP_NUMBER } from "@/config";
 
 export default function ContactPage() {
   const [form, setForm] = useState({ nama: "", email: "", pesan: "" });

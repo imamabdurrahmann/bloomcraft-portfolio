@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import { MessageCircle } from "lucide-react";
-
-const WHATSAPP_NUMBER = "6285173003181";
+import { WHATSAPP_NUMBER } from "@/config";
 
 export default function WhatsAppFloat() {
   return (

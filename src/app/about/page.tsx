@@ -3,8 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Clock, MessageCircle, ArrowRight } from "lucide-react";
-
-const WHATSAPP_NUMBER = "6285173003181";
+import { WHATSAPP_NUMBER } from "@/config";
 
 export default function AboutPage() {
   return (
