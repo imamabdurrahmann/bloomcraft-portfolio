@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { MessageCircle, ArrowRight, Sparkles, Flower2, Gift, Heart, Truck } from "lucide-react";
+import { MessageCircle, ArrowRight, Sparkles, Flower2, Gift, Heart } from "lucide-react";
 
 const WHATSAPP_NUMBER = "6285173003181";
 
@@ -62,7 +62,7 @@ export default function HomePage() {
               <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
                 <Image
                   src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=800&q=80"
-                  alt="Buket Bunga Premium"
+                  alt="Buket Bunga Premium Elly's Florist"
                   width={800}
                   height={1000}
                   className="w-full"
