@@ -21,10 +21,10 @@ export default function AboutPage() {
         {/* Content */}
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <div className="relative rounded-3xl overflow-hidden shadow-xl bg-white p-6 aspect-square max-w-md mx-auto">
+            <div className="relative rounded-3xl overflow-hidden shadow-xl bg-white p-6 aspect-[3/4] max-w-md mx-auto">
               <Image
-                src="/images/logo.png"
-                alt="Elly's Florist Workshop"
+                src="/images/tentang-elly.jpg"
+                alt="Elly's Florist"
                 fill
                 className="object-contain"
                 sizes="(max-width: 768px) 100vw, 50vw"

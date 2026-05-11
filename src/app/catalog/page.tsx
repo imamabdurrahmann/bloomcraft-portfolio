@@ -20,7 +20,7 @@ const categories = [
   {
     name: "Buket Custom",
     description: "Desain sesuai keinginan dan tema acara Anda",
-    image: "/images/bungakustom.png",
+    image: "/images/custom-buket.jpg",
   },
   {
     name: "Papan Bunga",
