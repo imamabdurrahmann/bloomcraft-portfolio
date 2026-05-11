@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
+import ContactForm from "@/components/ContactForm";
 import {
   MessageCircle,
   MapPin,
@@ -44,7 +45,7 @@ function Navbar() {
     { href: "#features", label: "Keunggulan" },
     { href: "#calculator", label: "Kalkulator" },
     { href: "#gallery", label: "Galeri" },
-    { href: "#testimonials", label: "Testimoni" },
+    { href: "#contact", label: "Kontak" },
   ];
 
   return (
@@ -432,7 +433,7 @@ function Footer() {
           <div>
             <h4 className="font-semibold text-white mb-4">Navigasi</h4>
             <ul className="space-y-2 text-sm">
-              {["Beranda", "Katalog", "Keunggulan", "Galeri", "Testimoni"].map((n) => (
+              {["Beranda", "Katalog", "Keunggulan", "Galeri", "Kontak"].map((n) => (
                 <li key={n}><a href="#" className="text-white/70 hover:text-white">{n}</a></li>
               ))}
             </ul>
@@ -474,6 +475,7 @@ export default function Home() {
       <About />
       <Gallery />
       <Testimonials />
+      <ContactForm />
       <Footer />
       <WhatsAppFloat />
     </main>
