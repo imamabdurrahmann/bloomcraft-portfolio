@@ -40,8 +40,8 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-white mb-4">Navigasi</h4>
             <ul className="space-y-2 text-sm">
-              {["/", "/catalog", "/gallery", "/calculator", "/about", "/contact"].map((href, i) => {
-                const labels = ["Beranda", "Katalog", "Galeri", "Kalkulator", "Tentang", "Kontak"];
+              {["/", "/catalog", "/gallery", "/about", "/contact"].map((href, i) => {
+                const labels = ["Beranda", "Katalog", "Galeri", "Tentang", "Kontak"];
                 return (
                   <li key={href}>
                     <Link href={href} className="text-white/70 hover:text-white">

@@ -11,7 +11,6 @@ const navLinks = [
   { href: "/", label: "Beranda" },
   { href: "/catalog", label: "Katalog" },
   { href: "/gallery", label: "Galeri" },
-  { href: "/calculator", label: "Kalkulator" },
   { href: "/about", label: "Tentang" },
   { href: "/contact", label: "Kontak" },
 ];
