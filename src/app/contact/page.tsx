@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { MessageCircle, Mail, User, Send, MapPin, Clock, Instagram } from "lucide-react";
 
 const WHATSAPP_NUMBER = "6285173003181";
@@ -24,11 +23,7 @@ export default function ContactPage() {
     <div className="pt-24 pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12 animate-fade-up">
           <span className="text-sm font-semibold tracking-wider text-primary uppercase">
             Hubungi Kami
           </span>
@@ -36,16 +31,11 @@ export default function ContactPage() {
           <p className="text-secondary mt-4 max-w-2xl mx-auto">
             Jangan ragu untuk menghubungi kami kapan saja
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.1 }}
-            className="space-y-6"
-          >
+          <div className="space-y-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
             <h3 className="font-display text-xl font-bold text-primary">Metode Kontak</h3>
 
             <a
@@ -120,14 +110,10 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
-          >
+          <div className="animate-fade-up" style={{ animationDelay: "0.2s" }}>
             <div className="glass-card p-8">
               <h3 className="font-display text-xl font-bold mb-6">Kirim Pesan</h3>
 
@@ -193,7 +179,7 @@ export default function ContactPage() {
                 Pesan Anda akan dikirim langsung ke WhatsApp kami
               </p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>

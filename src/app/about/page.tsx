@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Clock, MessageCircle, ArrowRight } from "lucide-react";
@@ -12,23 +11,16 @@ export default function AboutPage() {
     <div className="pt-24 pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12 animate-fade-up">
           <span className="text-sm font-semibold tracking-wider text-primary uppercase">
             Tentang Kami
           </span>
           <h1 className="section-title mt-2">Cerita Elly&apos;s Florist</h1>
-        </motion.div>
+        </div>
 
         {/* Content */}
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-          >
+          <div className="animate-fade-up">
             <div className="relative rounded-3xl overflow-hidden shadow-xl aspect-[4/3]">
               <Image
                 src="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=800&q=80"
@@ -38,13 +30,9 @@ export default function AboutPage() {
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
-          >
+          <div className="animate-fade-up" style={{ animationDelay: "0.2s" }}>
             <h2 className="section-title mb-4">Diciptakan dengan Cinta</h2>
             <p className="text-secondary leading-relaxed mb-4">
               Elly&apos;s Florist lahir dari kecintaan terhadap keindahan bunga dan dedikasi untuk menghadirkan momen istimewa bagi setiap pelanggan.
@@ -71,16 +59,11 @@ export default function AboutPage() {
               <MessageCircle size={18} />
               Hubungi Kami
             </Link>
-          </motion.div>
+          </div>
         </div>
 
         {/* Store Info */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="mt-16"
-        >
+        <div className="mt-16 animate-fade-up" style={{ animationDelay: "0.4s" }}>
           <h2 className="text-center section-title mb-8">Lokasi Toko</h2>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -116,20 +99,15 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-          className="text-center mt-12"
-        >
+        <div className="text-center mt-12 animate-fade-up" style={{ animationDelay: "0.6s" }}>
           <Link href="/catalog" className="btn-primary">
             Lihat Katalog Produk
             <ArrowRight size={18} />
           </Link>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { MessageCircle, Calculator } from "lucide-react";
 
 const WHATSAPP_NUMBER = "6285173003181";
@@ -27,11 +26,7 @@ export default function CalculatorPage() {
     <div className="pt-24 pb-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12 animate-fade-up">
           <span className="text-sm font-semibold tracking-wider text-primary uppercase">
             Tools
           </span>
@@ -39,14 +34,10 @@ export default function CalculatorPage() {
           <p className="text-secondary mt-4 max-w-2xl mx-auto">
             Hitung estimasi harga buket uang sesuai budget Anda
           </p>
-        </motion.div>
+        </div>
 
         {/* Calculator Card */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="price-calc-card"
-        >
+        <div className="price-calc-card animate-fade-up">
           <div className="grid md:grid-cols-2 gap-8">
             {/* Input Section */}
             <div className="space-y-6">
@@ -178,19 +169,14 @@ export default function CalculatorPage() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Info */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="mt-8 text-center"
-        >
+        <div className="mt-8 text-center animate-fade-up">
           <p className="text-sm text-secondary">
             Harga di atas adalah estimasi. Harga final bisa berbeda tergantung kompleksitas desain.
           </p>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

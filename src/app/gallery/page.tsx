@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { Instagram, MessageCircle } from "lucide-react";
 
@@ -22,11 +21,7 @@ export default function GalleryPage() {
     <div className="pt-24 pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12 animate-fade-up">
           <span className="text-sm font-semibold tracking-wider text-primary uppercase">
             Portofolio
           </span>
@@ -34,18 +29,15 @@ export default function GalleryPage() {
           <p className="text-secondary mt-4 max-w-2xl mx-auto">
             Kreasi bunga yang telah menghiasi berbagai momen spesial pelanggan kami
           </p>
-        </motion.div>
+        </div>
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {galleryImages.map((img, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: i * 0.05 }}
-              className={`relative rounded-2xl overflow-hidden ${i === 0 ? 'col-span-2 row-span-2' : ''}`}
-              style={{ aspectRatio: i === 0 ? "1" : "1" }}
+              className={`relative rounded-2xl overflow-hidden animate-fade-up ${i === 0 ? 'col-span-2 row-span-2' : ''}`}
+              style={{ animationDelay: `${i * 0.05}s` }}
             >
               <Image
                 src={img.src}
@@ -54,17 +46,12 @@ export default function GalleryPage() {
                 className="object-cover hover:scale-105 transition-transform duration-500"
                 sizes={i === 0 ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 50vw, 25vw"}
               />
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Social CTA */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="text-center mt-12"
-        >
+        <div className="text-center mt-12 animate-fade-up">
           <p className="text-secondary mb-4">
             Follow Instagram kami untuk melihat lebih banyak karya!
           </p>
@@ -88,7 +75,7 @@ export default function GalleryPage() {
               Pesan Sekarang
             </a>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

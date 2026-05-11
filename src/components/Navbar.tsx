@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MessageCircle, Menu, X } from "lucide-react";
-import { AnimatePresence, motion } from "framer-motion";
 
 const WHATSAPP_NUMBER = "6285173003181";
 
@@ -59,41 +58,34 @@ export default function Navbar() {
         </button>
       </nav>
 
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-border overflow-hidden"
-          >
-            <ul className="px-4 py-4 space-y-2">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="nav-link block"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-              <li className="pt-2">
+      {mobileOpen && (
+        <div className="md:hidden bg-white border-t border-border">
+          <ul className="px-4 py-4 space-y-2">
+            {navLinks.map((link) => (
+              <li key={link.href}>
                 <Link
-                  href={`https://wa.me/${WHATSAPP_NUMBER}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-whatsapp w-full justify-center"
+                  href={link.href}
+                  className="nav-link block"
+                  onClick={() => setMobileOpen(false)}
                 >
-                  <MessageCircle size={18} />
-                  Pesan via WhatsApp
+                  {link.label}
                 </Link>
               </li>
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            ))}
+            <li className="pt-2">
+              <Link
+                href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-whatsapp w-full justify-center"
+              >
+                <MessageCircle size={18} />
+                Pesan via WhatsApp
+              </Link>
+            </li>
+          </ul>
+        </div>
+      )}
     </header>
   );
 }

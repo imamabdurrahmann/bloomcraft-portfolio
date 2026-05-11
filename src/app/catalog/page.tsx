@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MessageCircle } from "lucide-react";
@@ -51,11 +50,7 @@ export default function CatalogPage() {
     <div className="pt-24 pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12 animate-fade-up">
           <span className="text-sm font-semibold tracking-wider text-primary uppercase">
             Koleksi Kami
           </span>
@@ -63,17 +58,15 @@ export default function CatalogPage() {
           <p className="text-secondary mt-4 max-w-2xl mx-auto">
             Pilihan buket bunga buatan untuk berbagai momen spesial Anda
           </p>
-        </motion.div>
+        </div>
 
         {/* Products Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {categories.map((item, i) => (
-            <motion.div
+            <div
               key={item.name}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              className="glass-card overflow-hidden group"
+              className="glass-card overflow-hidden group animate-fade-up"
+              style={{ animationDelay: `${i * 0.1}s` }}
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
@@ -102,17 +95,12 @@ export default function CatalogPage() {
                   </Link>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="text-center mt-12"
-        >
+        <div className="text-center mt-12 animate-fade-up">
           <p className="text-secondary mb-4">
             Tidak menemukan yang Anda cari? Kami menerima custom order!
           </p>
@@ -125,7 +113,7 @@ export default function CatalogPage() {
             <MessageCircle size={18} />
             Hubungi untuk Custom Order
           </Link>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
