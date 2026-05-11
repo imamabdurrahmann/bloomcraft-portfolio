@@ -11,37 +11,31 @@ const categories = [
     name: "Buket Graduation",
     description: "Buket wisuda dengan desain elegan dan personnal",
     image: "/images/graduation.png",
-    price: "Mulai Rp 75.000"
   },
   {
     name: "Money Bouquet",
     description: "Buket uang dengan berbagai nominal dan desain menarik",
     image: "/images/Money2.png",
-    price: "Mulai Rp 100.000"
   },
   {
     name: "Buket Custom",
     description: "Desain sesuai keinginan dan tema acara Anda",
     image: "/images/bungakustom.png",
-    price: "Mulai Rp 50.000"
   },
   {
     name: "Papan Bunga",
     description: "Bunga papan untuk pernikahan, duka cita, dan congratulation",
     image: "/images/papanbunga.png",
-    price: "Mulai Rp 125.000"
   },
   {
     name: "Buket Pernikahan",
     description: "Buket pengantin dan dekorasi pernikahan",
     image: "/images/Wedding1.png",
-    price: "Mulai Rp 150.000"
   },
   {
     name: "Hand Bouquet",
     description: "Buket tangan untuk hadiah sehari-hari",
     image: "/images/bouquet-1.jpg",
-    price: "Mulai Rp 35.000"
   },
 ];
 
@@ -81,18 +75,15 @@ export default function CatalogPage() {
                   {item.name}
                 </h3>
                 <p className="text-sm text-secondary mb-4">{item.description}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-semibold text-primary">{item.price}</span>
-                  <Link
-                    href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Halo, saya tertarik dengan ${item.name}`)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary text-sm py-2"
-                  >
-                    <MessageCircle size={16} />
-                    Pesan
-                  </Link>
-                </div>
+                <Link
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Halo, saya tertarik dengan ${item.name}`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary text-sm py-2 inline-flex items-center gap-2"
+                >
+                  <MessageCircle size={16} />
+                  Hubungi via WhatsApp
+                </Link>
               </div>
             </div>
           ))}
