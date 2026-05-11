@@ -85,12 +85,12 @@ export default function CatalogPage() {
               key={item.name}
               className="glass-card overflow-hidden group"
             >
-              <div className="relative aspect-[16/10] overflow-hidden">
+              <div className="relative aspect-[3/4] overflow-hidden bg-gradient-to-br from-rose-pastel/10 to-mint-pastel/10">
                 <Image
                   src={item.image}
                   alt={item.name}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-contain"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
               </div>
