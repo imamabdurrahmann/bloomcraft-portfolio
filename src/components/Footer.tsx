@@ -73,7 +73,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-6 text-center text-sm text-white/50">
-          © 2025 Elly&apos;s Florist. Dibuat dengan ❤️ di Bengkulu
+          © 2025 Elly&apos;s Florist
         </div>
       </div>
     </footer>
