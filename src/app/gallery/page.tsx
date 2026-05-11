@@ -6,9 +6,7 @@ import { Instagram, MessageCircle } from "lucide-react";
 const WHATSAPP_NUMBER = "6285173003181";
 
 const galleryImages = [
-  // Featured image (larger)
   { src: "/images/graduation.png", alt: "Bouquet Graduation" },
-  // Grid images
   { src: "/images/Money2.png", alt: "Money Bouquet" },
   { src: "/images/bungakustom.png", alt: "Bouquet Custom" },
   { src: "/images/papanbunga.png", alt: "Papan Bunga" },
@@ -39,15 +37,14 @@ export default function GalleryPage() {
           </p>
         </div>
 
-        {/* Gallery Grid - Bento Style */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {/* Gallery Grid - Fixed to remove black bars */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
           {galleryImages.map((img, i) => (
             <div
               key={i}
-              className={`relative overflow-hidden rounded-2xl bg-gray-100 ${
-                i === 0 ? "col-span-2 row-span-2" : ""
+              className={`relative overflow-hidden rounded-xl ${
+                i === 0 ? "col-span-2 row-span-2 aspect-square" : "aspect-square"
               }`}
-              style={{ aspectRatio: i === 0 ? "1" : "1" }}
             >
               <Image
                 src={img.src}
@@ -55,6 +52,7 @@ export default function GalleryPage() {
                 fill
                 className="object-cover hover:scale-110 transition-transform duration-500"
                 sizes={i === 0 ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 50vw, 25vw"}
+                style={i === 11 || i === 12 ? { objectPosition: "center" } : {}}
               />
             </div>
           ))}
