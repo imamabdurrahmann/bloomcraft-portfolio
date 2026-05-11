@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import {
   MessageCircle,
   MapPin,
@@ -18,9 +19,6 @@ import {
 
 const WHATSAPP_NUMBER = "6281234567890";
 
-// ─────────────────────────────────────────────
-// FLOATING WHATSAPP BUTTON
-// ─────────────────────────────────────────────
 function WhatsAppFloat() {
   return (
     <a
@@ -37,9 +35,6 @@ function WhatsAppFloat() {
   );
 }
 
-// ─────────────────────────────────────────────
-// NAVBAR
-// ─────────────────────────────────────────────
 function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -79,34 +74,20 @@ function Navbar() {
           Pesan
         </a>
 
-        <button
-          className="md:hidden p-2"
-          onClick={() => setMobileOpen(!mobileOpen)}
-        >
+        <button className="md:hidden p-2" onClick={() => setMobileOpen(!mobileOpen)}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            {mobileOpen ? (
-              <path d="M18 6L6 18M6 6l12 12" />
-            ) : (
-              <path d="M3 12h18M3 6h18M3 18h18" />
-            )}
+            {mobileOpen ? <path d="M18 6L6 18M6 6l12 12" /> : <path d="M3 12h18M3 6h18M3 18h18" />}
           </svg>
         </button>
       </nav>
 
       <AnimatePresence>
         {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-border overflow-hidden"
-          >
+          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} className="md:hidden bg-white border-t border-border overflow-hidden">
             <ul className="px-4 py-4 space-y-2">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="nav-link block" onClick={() => setMobileOpen(false)}>
-                    {link.label}
-                  </a>
+                  <a href={link.href} className="nav-link block" onClick={() => setMobileOpen(false)}>{link.label}</a>
                 </li>
               ))}
               <li className="pt-2">
@@ -123,27 +104,14 @@ function Navbar() {
   );
 }
 
-// ─────────────────────────────────────────────
-// HERO
-// ─────────────────────────────────────────────
 function Hero() {
   return (
     <section id="home" className="hero-section">
       <div className="hero-bg" />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full">
         <div className="grid md:grid-cols-2 gap-8 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="hero-content"
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-border mb-6"
-            >
+          <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }} className="hero-content">
+            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-border mb-6">
               <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
               <span className="text-sm font-medium text-secondary">Local Business • Lebong, Bengkulu</span>
             </motion.div>
@@ -153,7 +121,7 @@ function Hero() {
             </h1>
 
             <p className="text-lg text-secondary mb-8 leading-relaxed">
-              Kami menciptakan buket bunga buatan premium dengan sentuhan personal untuk setiap momen spesial Anda.
+              Kami menciptakan buket bunga buatan premium dengan sentukan personal untuk setiap momen spesial Anda.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -168,14 +136,9 @@ function Hero() {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="relative"
-          >
-            <div className="relative z-10">
-              <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=800&q=80" alt="Buket Bunga Premium" className="rounded-3xl shadow-2xl w-full" style={{ aspectRatio: "4/5" }} loading="eager" />
+          <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.2 }} className="relative">
+            <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
+              <Image src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=800&q=80" alt="Buket Bunga Premium" width={800} height={1000} className="w-full" priority />
             </div>
             <div className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-rose-pastel opacity-60 blur-2xl animate-float" />
             <div className="absolute -bottom-4 -left-4 w-32 h-32 rounded-full bg-mint-pastel opacity-60 blur-2xl animate-float-delay-2" />
@@ -186,9 +149,6 @@ function Hero() {
   );
 }
 
-// ─────────────────────────────────────────────
-// CATALOG
-// ─────────────────────────────────────────────
 const catalogItems = [
   { name: "Buket Custom", count: 12, image: "https://images.unsplash.com/photo-1529139374472-7a8c22aa5c4b?w=600&q=80", desc: "Desain sesuai keinginan" },
   { name: "Bunga Papan", count: 8, image: "https://images.unsplash.com/photo-1494282484285-a6a7cfe0712d?w=600&q=80", desc: "Untuk berbagai acara" },
@@ -207,7 +167,7 @@ function Catalog() {
         <div className="grid md:grid-cols-3 gap-6">
           {catalogItems.map((item, i) => (
             <motion.div key={item.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="group relative rounded-2xl overflow-hidden cursor-pointer" style={{ aspectRatio: "4/5" }}>
-              <img src={item.image} alt={item.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+              <Image src={item.image} alt={item.name} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                 <h3 className="font-display text-2xl font-bold mb-1">{item.name}</h3>
@@ -222,9 +182,6 @@ function Catalog() {
   );
 }
 
-// ─────────────────────────────────────────────
-// FEATURES (BENTO GRID)
-// ─────────────────────────────────────────────
 const features = [
   { icon: <Sparkles className="w-8 h-8" />, title: "Premium Quality", desc: "Bahan berkualitas tinggi dengan tampilan realistis", color: "pastel-rose", large: true },
   { icon: <Flower2 className="w-6 h-6" />, title: "Custom Design", desc: "Bebas request sesuai tema", color: "pastel-mint" },
@@ -256,16 +213,12 @@ function Features() {
   );
 }
 
-// ─────────────────────────────────────────────
-// MONEY BOUQUET CALCULATOR
-// ─────────────────────────────────────────────
 function Calculator() {
   const [money, setMoney] = useState(100000);
   const [fee, setFee] = useState(35000);
   const [addon, setAddon] = useState(0);
 
   const formatCurrency = (n: number) => new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR", minimumFractionDigits: 0 }).format(n);
-
   const presets = [50000, 100000, 200000, 500000, 1000000];
 
   const sendOrder = () => {
@@ -348,9 +301,6 @@ function Calculator() {
   );
 }
 
-// ─────────────────────────────────────────────
-// GALLERY
-// ─────────────────────────────────────────────
 const galleryImages = [
   { src: "https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=800&q=80", alt: "Graduation" },
   { src: "https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=400&q=80", alt: "Money" },
@@ -371,7 +321,7 @@ function Gallery() {
         <div className="gallery-grid">
           {galleryImages.map((img, i) => (
             <motion.div key={i} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="gallery-item">
-              <img src={img.src} alt={img.alt} loading="lazy" />
+              <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" />
             </motion.div>
           ))}
         </div>
@@ -386,9 +336,6 @@ function Gallery() {
   );
 }
 
-// ─────────────────────────────────────────────
-// TESTIMONIALS
-// ─────────────────────────────────────────────
 const testimonials = [
   { text: "Buket graduation-nya cantik banget! Exactly seperti yang saya minta.", name: "Rina Wulandari", loc: "Curup, Lebong" },
   { text: "Sudah 3 kali pesan di BloomCraft. Kualitasnya konsisten dan pelayanannya ramah!", name: "Ahmad Fauzi", loc: "Bengkulu Utara" },
@@ -434,16 +381,15 @@ function Testimonials() {
   );
 }
 
-// ─────────────────────────────────────────────
-// ABOUT
-// ─────────────────────────────────────────────
 function About() {
   return (
     <section id="about" className="section">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
-            <img src="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=800&q=80" alt="Workshop" className="rounded-3xl shadow-xl" loading="lazy" />
+            <div className="relative rounded-3xl overflow-hidden shadow-xl aspect-[4/3]">
+              <Image src="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=800&q=80" alt="Workshop" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+            </div>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
@@ -467,9 +413,6 @@ function About() {
   );
 }
 
-// ─────────────────────────────────────────────
-// FOOTER
-// ─────────────────────────────────────────────
 function Footer() {
   return (
     <footer className="footer">
@@ -512,9 +455,6 @@ function Footer() {
   );
 }
 
-// ─────────────────────────────────────────────
-// MAIN PAGE
-// ─────────────────────────────────────────────
 export default function Home() {
   return (
     <main>
