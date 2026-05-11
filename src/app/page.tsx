@@ -35,12 +35,12 @@ export default function HomePage() {
                 Buket bunga buatan premium handmade untuk graduation, anniversary, dan momen spesial Anda.
               </p>
 
-              <div className="flex flex-wrap gap-4 animate-slide-up" style={{ animationDelay: "0.2s" }}>
-                <Link href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="btn-whatsapp">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 animate-slide-up" style={{ animationDelay: "0.2s" }}>
+                <Link href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="btn-whatsapp text-center">
                   <MessageCircle size={20} />
                   Pesan Sekarang
                 </Link>
-                <Link href="/catalog" className="btn-primary">
+                <Link href="/catalog" className="btn-primary text-center">
                   Lihat Katalog
                   <ArrowRight size={18} />
                 </Link>

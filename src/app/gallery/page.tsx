@@ -76,12 +76,12 @@ export default function GalleryPage() {
           <p className="text-secondary mb-4">
             Follow Instagram kami untuk melihat lebih banyak karya!
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
             <a
               href="https://instagram.com/ellys.flo"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary"
+              className="btn-primary text-center"
             >
               <Instagram size={18} />
               @ellys.flo
@@ -90,7 +90,7 @@ export default function GalleryPage() {
               href={`https://wa.me/${WHATSAPP_NUMBER}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-whatsapp"
+              className="btn-whatsapp text-center"
             >
               <MessageCircle size={18} />
               Pesan Sekarang

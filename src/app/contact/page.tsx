@@ -33,7 +33,7 @@ export default function ContactPage() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Contact Info */}
           <div className="space-y-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
             <h3 className="font-display text-xl font-bold text-primary">Metode Kontak</h3>
@@ -114,7 +114,7 @@ export default function ContactPage() {
 
           {/* Contact Form */}
           <div className="animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            <div className="glass-card p-8">
+            <div className="glass-card p-6 sm:p-8">
               <h3 className="font-display text-xl font-bold mb-6">Kirim Pesan</h3>
 
               <form onSubmit={handleSubmit} className="space-y-4">
