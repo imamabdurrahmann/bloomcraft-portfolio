@@ -18,7 +18,7 @@ const galleryImages = [
 
 export default function GalleryPage() {
   return (
-    <div className="pt-24 pb-16 min-h-screen">
+    <div className="pt-24 pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Header */}
         <div className="text-center mb-12">
@@ -31,14 +31,15 @@ export default function GalleryPage() {
           </p>
         </div>
 
-        {/* Gallery Grid */}
+        {/* Gallery Grid - Fixed with proper aspect ratios */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {galleryImages.map((img, i) => (
             <div
               key={i}
-              className={`relative rounded-2xl overflow-hidden bg-gray-100 ${
-                i === 0 ? 'col-span-2 row-span-2 aspect-square' : 'aspect-square'
+              className={`relative overflow-hidden rounded-2xl bg-gray-100 ${
+                i === 0 ? "col-span-2 row-span-2 aspect-[4/4]" : "aspect-square"
               }`}
+              style={{ position: "relative" }}
             >
               <Image
                 src={img.src}
