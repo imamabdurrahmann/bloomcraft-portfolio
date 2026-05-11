@@ -52,7 +52,10 @@ export default function GalleryPage() {
                 fill
                 className="object-cover hover:scale-110 transition-transform duration-500"
                 sizes={i === 0 ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 50vw, 25vw"}
-                style={i === 11 || i === 12 ? { objectPosition: "center" } : {}}
+                style={
+                  i === 0 ? { objectPosition: "92% center" } :
+                  i === 11 ? { objectPosition: "10% center" } : {}
+                }
               />
             </div>
           ))}
