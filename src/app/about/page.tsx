@@ -19,9 +19,9 @@ export default function AboutPage() {
         </div>
 
         {/* Content */}
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div>
-            <div className="relative rounded-3xl overflow-hidden shadow-xl bg-white p-6 aspect-[3/4] max-w-md mx-auto">
+            <div className="relative rounded-3xl overflow-hidden shadow-xl bg-white p-4 sm:p-6 aspect-[3/4] max-w-sm sm:max-w-md mx-auto">
               <Image
                 src="/images/tentang-elly.jpg"
                 alt="Elly's Florist"
@@ -33,32 +33,34 @@ export default function AboutPage() {
           </div>
 
           <div>
-            <h2 className="section-title mb-4">Diciptakan dengan Cinta</h2>
-            <p className="text-secondary leading-relaxed mb-4">
+            <h2 className="section-title mb-4 text-center md:text-left">Diciptakan dengan Cinta</h2>
+            <p className="text-secondary leading-relaxed mb-4 text-sm sm:text-base">
               Elly&apos;s Florist lahir dari kecintaan terhadap keindahan bunga dan dedikasi untuk menghadirkan momen istimewa bagi setiap pelanggan.
             </p>
-            <p className="text-secondary leading-relaxed mb-6">
+            <p className="text-secondary leading-relaxed mb-6 text-sm sm:text-base">
               Setiap buket yang kami buat menggunakan bahan premium dan dikreasikan dengan penuh perhatian terhadap detail. Kami percaya bahwa setiap buket memiliki cerita uniknya sendiri.
             </p>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 mb-8">
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-8">
               {[
                 { n: "500+", l: "Buket Terjual" },
                 { n: "3+", l: "Tahun Pengalaman" },
                 { n: "100%", l: "Kepuasan" },
               ].map((s) => (
-                <div key={s.l} className="text-center p-4 rounded-2xl bg-white border border-border">
-                  <p className="text-3xl font-bold gradient-text">{s.n}</p>
-                  <p className="text-sm text-secondary mt-1">{s.l}</p>
+                <div key={s.l} className="text-center p-3 sm:p-4 rounded-2xl bg-white border border-border">
+                  <p className="text-xl sm:text-2xl lg:text-3xl font-bold gradient-text">{s.n}</p>
+                  <p className="text-xs sm:text-sm text-secondary mt-1">{s.l}</p>
                 </div>
               ))}
             </div>
 
-            <Link href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="btn-whatsapp">
-              <MessageCircle size={18} />
-              Hubungi Kami
-            </Link>
+            <div className="flex justify-center md:justify-start">
+              <Link href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="btn-whatsapp">
+                <MessageCircle size={18} />
+                Hubungi Kami
+              </Link>
+            </div>
           </div>
         </div>
 

@@ -98,14 +98,14 @@ export default function HomePage() {
           <p className="text-secondary mb-8 max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "0.1s" }}>
             Hubungi kami sekarang untuk konsultasi gratis dan dapatkan buket impian Anda.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 animate-fade-up" style={{ animationDelay: "0.2s" }}>
             <Link href="/catalog" className="btn-primary">
               Lihat Katalog Produk
               <ArrowRight size={18} />
             </Link>
-            <Link href="/calculator" className="btn-whatsapp">
+            <Link href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="btn-whatsapp">
               <MessageCircle size={18} />
-              Hitung Harga Money Bouquet
+              Hubungi via WhatsApp
             </Link>
           </div>
         </div>
