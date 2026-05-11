@@ -7,7 +7,7 @@ const WHATSAPP_NUMBER = "6285173003181";
 
 const galleryImages = [
   { src: "https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=800&q=80", alt: "Money Bouquet Graduation" },
-  { src: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=800&q=80", alt: "Floral Bouquet" },
+  { src: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=400&q=80", alt: "Floral Bouquet" },
   { src: "https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=400&q=80", alt: "Money Bouquet" },
   { src: "https://images.unsplash.com/photo-1487537273382-9ea71699a8bb?w=400&q=80", alt: "Romantic Bouquet" },
   { src: "https://images.unsplash.com/photo-1518882605630-8eb6933f4b9b?w=400&q=80", alt: "Birthday Surprise" },
@@ -32,18 +32,18 @@ export default function GalleryPage() {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="gallery-grid">
           {galleryImages.map((img, i) => (
             <div
               key={i}
-              className={`relative rounded-2xl overflow-hidden animate-fade-up ${i === 0 ? 'col-span-2 row-span-2' : ''}`}
+              className={`gallery-item animate-fade-up ${i === 0 ? 'featured' : ''}`}
               style={{ animationDelay: `${i * 0.05}s` }}
             >
               <Image
                 src={img.src}
                 alt={img.alt}
                 fill
-                className="object-cover hover:scale-105 transition-transform duration-500"
+                className="object-cover transition-transform duration-500 hover:scale-110"
                 sizes={i === 0 ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 50vw, 25vw"}
               />
             </div>
