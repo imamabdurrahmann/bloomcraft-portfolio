@@ -85,7 +85,7 @@ export default function CatalogPage() {
               key={item.name}
               className="glass-card overflow-hidden group"
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
+              <div className="relative aspect-[16/10] overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.name}
