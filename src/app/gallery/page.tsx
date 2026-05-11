@@ -50,7 +50,7 @@ export default function GalleryPage() {
                 src={img.src}
                 alt={img.alt}
                 fill
-                className="object-cover hover:scale-110 transition-transform duration-500"
+                className="object-cover scale-[1.08] hover:scale-[1.13] transition-transform duration-300"
                 sizes={i === 0 ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 50vw, 25vw"}
                 style={
                   i === 0 ? { objectPosition: "92% center" } :
