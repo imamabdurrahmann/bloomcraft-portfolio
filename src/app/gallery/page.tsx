@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { Instagram, MessageCircle } from "lucide-react";
 import { WHATSAPP_NUMBER } from "@/config";
+import { useState } from "react";
+import Lightbox from "@/components/Lightbox";
 
 const galleryImages = [
   { src: "/images/graduation.png", alt: "Bouquet Graduation" },
@@ -32,6 +34,14 @@ const galleryImages = [
 ];
 
 export default function GalleryPage() {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const openLightbox = (index: number) => {
+    setSelectedIndex(index);
+    setLightboxOpen(true);
+  };
+
   return (
     <div className="pt-24 pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -46,14 +56,15 @@ export default function GalleryPage() {
           </p>
         </div>
 
-        {/* Gallery Grid - Fixed to remove black bars */}
+        {/* Gallery Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-0 sm:gap-1">
           {galleryImages.map((img, i) => (
             <div
               key={i}
-              className={`relative overflow-hidden bg-gradient-to-br from-rose-pastel/20 to-mint-pastel/20 ${
+              className={`relative overflow-hidden bg-gradient-to-br from-rose-pastel/20 to-mint-pastel/20 cursor-pointer ${
                 i === 0 ? "col-span-2 row-span-2 aspect-square" : "aspect-square"
               }`}
+              onClick={() => openLightbox(i)}
             >
               <Image
                 src={img.src}
@@ -97,6 +108,17 @@ export default function GalleryPage() {
           </div>
         </div>
       </div>
+
+      {/* Lightbox */}
+      <Lightbox
+        src={galleryImages[selectedIndex].src}
+        alt={galleryImages[selectedIndex].alt}
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+        images={galleryImages}
+        currentIndex={selectedIndex}
+        onNavigate={setSelectedIndex}
+      />
     </div>
   );
 }

@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { WHATSAPP_NUMBER } from "@/config";
+import { useState } from "react";
+import Lightbox from "@/components/Lightbox";
 
 const categories = [
   {
@@ -39,6 +41,14 @@ const categories = [
 ];
 
 export default function CatalogPage() {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const openLightbox = (index: number) => {
+    setSelectedIndex(index);
+    setLightboxOpen(true);
+  };
+
   return (
     <div className="pt-24 pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -84,12 +94,15 @@ export default function CatalogPage() {
               key={item.name}
               className="glass-card overflow-hidden group"
             >
-              <div className="relative aspect-[3/4] overflow-hidden bg-gradient-to-br from-rose-pastel/10 to-mint-pastel/10">
+              <div
+                className="relative aspect-[3/4] overflow-hidden bg-gradient-to-br from-rose-pastel/10 to-mint-pastel/10 cursor-pointer"
+                onClick={() => openLightbox(i)}
+              >
                 <Image
                   src={item.image}
                   alt={item.name}
                   fill
-                  className="object-contain"
+                  className="object-contain hover:scale-105 transition-transform duration-300"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
               </div>
@@ -128,6 +141,17 @@ export default function CatalogPage() {
           </Link>
         </div>
       </div>
+
+      {/* Lightbox */}
+      <Lightbox
+        src={categories[selectedIndex].image}
+        alt={categories[selectedIndex].name}
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+        images={categories}
+        currentIndex={selectedIndex}
+        onNavigate={setSelectedIndex}
+      />
     </div>
   );
 }
