@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, Clock, MessageCircle, ArrowRight } from "lucide-react";
-import { WHATSAPP_NUMBER } from "@/config";
+import { MapPin, Clock, ArrowRight } from "lucide-react";
 
 export default function AboutPage() {
   return (
@@ -52,13 +51,6 @@ export default function AboutPage() {
                   <p className="text-xs sm:text-sm text-secondary mt-1">{s.l}</p>
                 </div>
               ))}
-            </div>
-
-            <div className="flex justify-center md:justify-start">
-              <Link href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="btn-whatsapp">
-                <MessageCircle size={18} />
-                Hubungi Kami
-              </Link>
             </div>
           </div>
         </div>

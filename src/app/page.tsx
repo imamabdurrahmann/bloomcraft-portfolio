@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { MessageCircle, ArrowRight, Sparkles, Flower2, Gift, Heart } from "lucide-react";
-import { WHATSAPP_NUMBER } from "@/config";
+import { ArrowRight, Sparkles, Flower2, Gift, Heart } from "lucide-react";
 
 const features = [
   { icon: <Sparkles className="w-8 h-8" />, title: "Premium Quality", desc: "Bahan berkualitas tinggi" },
@@ -34,11 +33,7 @@ export default function HomePage() {
                 Buket bunga buatan premium handmade untuk graduation, anniversary, dan momen spesial Anda.
               </p>
 
-              <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 animate-slide-up" style={{ animationDelay: "0.2s" }}>
-                <Link href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="btn-whatsapp text-center">
-                  <MessageCircle size={20} />
-                  Pesan Sekarang
-                </Link>
+              <div className="flex flex-wrap gap-3 sm:gap-4 animate-slide-up" style={{ animationDelay: "0.2s" }}>
                 <Link href="/catalog" className="btn-primary text-center">
                   Lihat Katalog
                   <ArrowRight size={18} />
@@ -100,10 +95,6 @@ export default function HomePage() {
             <Link href="/catalog" className="btn-primary">
               Lihat Katalog Produk
               <ArrowRight size={18} />
-            </Link>
-            <Link href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="btn-whatsapp">
-              <MessageCircle size={18} />
-              Hubungi via WhatsApp
             </Link>
           </div>
         </div>

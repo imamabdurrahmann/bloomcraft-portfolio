@@ -3,8 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MessageCircle, Menu, X } from "lucide-react";
-import { WHATSAPP_NUMBER } from "@/config";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Beranda" },
@@ -41,16 +40,6 @@ export default function Navbar() {
           })}
         </ul>
 
-        <Link
-          href={`https://wa.me/${WHATSAPP_NUMBER}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden md:flex btn-primary text-sm"
-        >
-          <MessageCircle size={18} />
-          Pesan
-        </Link>
-
         <button className="md:hidden p-2" onClick={() => setMobileOpen(!mobileOpen)}>
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -70,17 +59,6 @@ export default function Navbar() {
                 </Link>
               </li>
             ))}
-            <li className="pt-2">
-              <Link
-                href={`https://wa.me/${WHATSAPP_NUMBER}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-whatsapp w-full justify-center"
-              >
-                <MessageCircle size={18} />
-                Pesan via WhatsApp
-              </Link>
-            </li>
           </ul>
         </div>
       )}

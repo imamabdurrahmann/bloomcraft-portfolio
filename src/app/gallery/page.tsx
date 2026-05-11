@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Instagram, MessageCircle } from "lucide-react";
-import { WHATSAPP_NUMBER } from "@/config";
+import { Instagram } from "lucide-react";
 import { useState } from "react";
 import Lightbox from "@/components/Lightbox";
 
@@ -86,26 +85,15 @@ export default function GalleryPage() {
           <p className="text-secondary mb-4">
             Follow Instagram kami untuk melihat lebih banyak karya!
           </p>
-          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
-            <a
-              href="https://instagram.com/ellys.flo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary text-center"
-            >
-              <Instagram size={18} />
-              @ellys.flo
-            </a>
-            <a
-              href={`https://wa.me/${WHATSAPP_NUMBER}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-whatsapp text-center"
-            >
-              <MessageCircle size={18} />
-              Pesan Sekarang
-            </a>
-          </div>
+          <a
+            href="https://instagram.com/ellys.flo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary text-center inline-flex items-center gap-2"
+          >
+            <Instagram size={18} />
+            @ellys.flo
+          </a>
         </div>
       </div>
 
