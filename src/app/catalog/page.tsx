@@ -148,7 +148,7 @@ export default function CatalogPage() {
         alt={categories[selectedIndex].name}
         isOpen={lightboxOpen}
         onClose={() => setLightboxOpen(false)}
-        images={categories}
+        images={categories.map(c => ({ src: c.image, alt: c.name }))}
         currentIndex={selectedIndex}
         onNavigate={setSelectedIndex}
       />
