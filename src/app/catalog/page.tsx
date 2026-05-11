@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, MessageCircle } from "lucide-react";
-import { WHATSAPP_NUMBER } from "@/config";
+import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 import Lightbox from "@/components/Lightbox";
 
@@ -110,16 +109,7 @@ export default function CatalogPage() {
                 <h3 className="font-display text-xl font-bold text-primary mb-2">
                   {item.name}
                 </h3>
-                <p className="text-sm text-secondary mb-4">{item.description}</p>
-                <Link
-                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Halo, saya tertarik dengan ${item.name}`)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary text-sm py-2 inline-flex items-center gap-2"
-                >
-                  <MessageCircle size={16} />
-                  Hubungi via WhatsApp
-                </Link>
+                <p className="text-sm text-secondary">{item.description}</p>
               </div>
             </div>
           ))}
@@ -127,17 +117,9 @@ export default function CatalogPage() {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <p className="text-secondary mb-4">
-            Tidak menemukan yang Anda cari? Kami menerima custom order!
-          </p>
-          <Link
-            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Halo, saya ingin custom order buket")}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-whatsapp"
-          >
-            <MessageCircle size={18} />
-            Hubungi untuk Custom Order
+          <Link href="/gallery" className="btn-primary">
+            Lihat Semua Galeri
+            <ArrowRight size={18} />
           </Link>
         </div>
       </div>
