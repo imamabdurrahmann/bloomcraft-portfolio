@@ -11,8 +11,8 @@ export default function AboutPage() {
     <div className="pt-24 pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center mb-12 animate-fade-up">
-          <span className="text-sm font-semibold tracking-wider text-primary uppercase">
+        <div className="text-center mb-12">
+          <span className="text-sm font-semibold tracking-wider text-primary uppercase block">
             Tentang Kami
           </span>
           <h1 className="section-title mt-2">Cerita Elly&apos;s Florist</h1>
@@ -20,11 +20,11 @@ export default function AboutPage() {
 
         {/* Content */}
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="animate-fade-up">
+          <div>
             <div className="relative rounded-3xl overflow-hidden shadow-xl aspect-[4/3]">
               <Image
-                src="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=800&q=80"
-                alt="Workshop Elly's Florist"
+                src="/images/logo.png"
+                alt="Elly's Florist Workshop"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -32,7 +32,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="animate-fade-up" style={{ animationDelay: "0.2s" }}>
+          <div>
             <h2 className="section-title mb-4">Diciptakan dengan Cinta</h2>
             <p className="text-secondary leading-relaxed mb-4">
               Elly&apos;s Florist lahir dari kecintaan terhadap keindahan bunga dan dedikasi untuk menghadirkan momen istimewa bagi setiap pelanggan.
@@ -63,7 +63,7 @@ export default function AboutPage() {
         </div>
 
         {/* Store Info */}
-        <div className="mt-16 animate-fade-up" style={{ animationDelay: "0.4s" }}>
+        <div className="mt-16">
           <h2 className="text-center section-title mb-8">Lokasi Toko</h2>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -102,7 +102,7 @@ export default function AboutPage() {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-12 animate-fade-up" style={{ animationDelay: "0.6s" }}>
+        <div className="text-center mt-12">
           <Link href="/catalog" className="btn-primary">
             Lihat Katalog Produk
             <ArrowRight size={18} />

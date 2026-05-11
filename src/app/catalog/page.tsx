@@ -9,38 +9,38 @@ const WHATSAPP_NUMBER = "6285173003181";
 const categories = [
   {
     name: "Buket Graduation",
-    description: "Buket wisuda dengan desain elegan dan personnalisé",
-    image: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=800&q=80",
+    description: "Buket wisuda dengan desain elegan dan personnal",
+    image: "/images/graduation.png",
     price: "Mulai Rp 75.000"
   },
   {
     name: "Money Bouquet",
     description: "Buket uang dengan berbagai nominal dan desain menarik",
-    image: "https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=800&q=80",
+    image: "/images/Money2.png",
     price: "Mulai Rp 100.000"
   },
   {
     name: "Buket Custom",
     description: "Desain sesuai keinginan dan tema acara Anda",
-    image: "https://images.unsplash.com/photo-1529139374472-7a8c22aa5c4b?w=800&q=80",
+    image: "/images/bungakustom.png",
     price: "Mulai Rp 50.000"
   },
   {
-    name: "Bunga Papan",
+    name: "Papan Bunga",
     description: "Bunga papan untuk pernikahan, duka cita, dan congratulation",
-    image: "https://images.unsplash.com/photo-1494282484285-a6a7cfe0712d?w=800&q=80",
+    image: "/images/papanbunga.png",
     price: "Mulai Rp 125.000"
   },
   {
     name: "Buket Pernikahan",
     description: "Buket pengantin dan dekorasi pernikahan",
-    image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80",
+    image: "/images/Wedding1.png",
     price: "Mulai Rp 150.000"
   },
   {
     name: "Hand Bouquet",
     description: "Buket tangan untuk hadiah sehari-hari",
-    image: "https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=800&q=80",
+    image: "/images/bouquet-1.jpg",
     price: "Mulai Rp 35.000"
   },
 ];
@@ -50,8 +50,8 @@ export default function CatalogPage() {
     <div className="pt-24 pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center mb-12 animate-fade-up">
-          <span className="text-sm font-semibold tracking-wider text-primary uppercase">
+        <div className="text-center mb-12">
+          <span className="text-sm font-semibold tracking-wider text-primary uppercase block">
             Koleksi Kami
           </span>
           <h1 className="section-title mt-2">Katalog Produk</h1>
@@ -65,8 +65,7 @@ export default function CatalogPage() {
           {categories.map((item, i) => (
             <div
               key={item.name}
-              className="glass-card overflow-hidden group animate-fade-up"
-              style={{ animationDelay: `${i * 0.1}s` }}
+              className="glass-card overflow-hidden group"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
@@ -100,7 +99,7 @@ export default function CatalogPage() {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-12 animate-fade-up">
+        <div className="text-center mt-12">
           <p className="text-secondary mb-4">
             Tidak menemukan yang Anda cari? Kami menerima custom order!
           </p>
