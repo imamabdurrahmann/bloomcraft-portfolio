@@ -6,7 +6,7 @@ import { MessageCircle, Mail, User, Send, MapPin, Clock, Instagram } from "lucid
 
 const WHATSAPP_NUMBER = "6285173003181";
 
-function ContactForm() {
+export default function ContactPage() {
   const [form, setForm] = useState({ nama: "", email: "", pesan: "" });
   const [submitted, setSubmitted] = useState(false);
 
@@ -21,34 +21,32 @@ function ContactForm() {
   };
 
   return (
-    <section id="contact" className="section">
+    <div className="pt-24 pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
           <span className="text-sm font-semibold tracking-wider text-primary uppercase">
             Hubungi Kami
           </span>
-          <h2 className="section-title mt-2">Ada Pertanyaan?</h2>
-          <p className="section-subtitle mx-auto mt-4">
+          <h1 className="section-title mt-2">Ada Pertanyaan?</h1>
+          <p className="text-secondary mt-4 max-w-2xl mx-auto">
             Jangan ragu untuk menghubungi kami kapan saja
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
-          {/* Contact Info Cards */}
+          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.1 }}
             className="space-y-6"
           >
-            <h3 className="font-display text-xl font-bold text-primary">
-              Metode Kontak
-            </h3>
+            <h3 className="font-display text-xl font-bold text-primary">Metode Kontak</h3>
 
             <a
               href={`https://wa.me/${WHATSAPP_NUMBER}`}
@@ -88,7 +86,7 @@ function ContactForm() {
             >
               <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="text-blue-600">
-                  <path d="M19.46 9H4.54a.54.54 0 0 0-.54.54v9.08a2.16 2.16 0 0 0 2.16 2.16h12.7a2.16 2.16 0 0 0 2.16-2.16V9.54a.54.54 0 0 0-.54-.54m-4.6 12.28h-7.46a.6.6 0 0 1-.6-.6v-4.24a.6.6 0 0 1 .6-.6h7.46a.6.6 0 0 1 .6.6v4.24a.6.6 0 0 1-.6.6m-7.46-11.42a3.36 3.36 0 1 0 0-6.72 3.36 3.36 0 0 0 0 6.72m6.72 0a3.36 3.36 0 1 0 0-6.72 3.36 3.36 0 0 0 0 6.72"/>
+                  <path d="M19.46 9H4.54a.54.54 0 0 0-.54.54v9.08a2.16 2.16 0 0 0 2.16 2.16h12.7a2.16 2.16 0 0 0 2.16-2.16V9.54a.54.54 0 0 0-.54-.54m-4.6 12.28h-7.46a.6.6 0 0 1-.6-.6v-4.24a.6.6 0 0 1 .6-.6h7.46a.6.6 0 0 1 .6.6v4.24a.6.6 0 0 1-.6.6m-7.46-11.42a3.36 3.36 0 1 0 0-6.72 3.36 3.36 0 0 0 0 6.72m6.72 0a3.36 3.36 0 1 0 0-6.72 3.36 3.36 0 0 0 0 6.72" />
                 </svg>
               </div>
               <div>
@@ -127,8 +125,8 @@ function ContactForm() {
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
           >
             <div className="glass-card p-8">
               <h3 className="font-display text-xl font-bold mb-6">Kirim Pesan</h3>
@@ -179,10 +177,7 @@ function ContactForm() {
                   />
                 </div>
 
-                <button
-                  type="submit"
-                  className="btn-whatsapp w-full justify-center"
-                >
+                <button type="submit" className="btn-whatsapp w-full justify-center">
                   {submitted ? (
                     "Terkirim! ✓"
                   ) : (
@@ -201,8 +196,6 @@ function ContactForm() {
           </motion.div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
-
-export default ContactForm;
