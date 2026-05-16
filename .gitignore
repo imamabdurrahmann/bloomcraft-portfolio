@@ -38,3 +38,6 @@ next-env.d.ts
 *.swo
 
 .vercel
+
+# Claude Code (internal files)
+.claude/
